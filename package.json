@@ -8,6 +8,8 @@
   "scripts": {
     "build": "pnpm -r build",
     "dev": "pnpm -r dev",
+    "link": "pnpm --filter @acme/cli link --global",
+    "unlink": "pnpm --filter @acme/cli unlink --global",
     "clean": "pnpm -r clean",
     "lint": "pnpm -r lint",
     "format": "pnpm -r format",

@@ -1,6 +1,5 @@
 import { Command } from 'commander';
 import { greet } from '@acme/core';
-import { runTUI } from '@acme/tui';
 
 const VERSION = '0.1.0';
 
@@ -21,6 +20,7 @@ program
   .argument('[name]', 'Your name', 'World')
   .description('Launch the Ink TUI')
   .action(async (name: string) => {
+    const { runTUI } = await import('@acme/tui');
     await runTUI(name);
   });
 
