@@ -6,10 +6,7 @@ const VERSION = '0.1.0';
 
 const program = new Command();
 
-program
-  .name('acme')
-  .description('CLI for demoing core utilities and a TUI')
-  .version(VERSION);
+program.name('acme').description('CLI for demoing core utilities and a TUI').version(VERSION);
 
 program
   .command('hello')
