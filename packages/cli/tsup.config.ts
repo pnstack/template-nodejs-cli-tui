@@ -19,6 +19,5 @@ export default defineConfig({
       'const require = createRequire(import.meta.url);',
     ].join('\n'),
   },
-  noExternal: ['@acme/core', '@acme/tui'],
-  external: ['react-devtools-core', '@lydell/node-pty'],
+  external: ['@acme/core', '@acme/tui', 'react-devtools-core', '@lydell/node-pty'],
 });
