@@ -1,6 +1,8 @@
-import 'dotenv/config'; // load .env into process.env (overrides globals)
+import * as dotenv from 'dotenv';
 import { Command } from 'commander';
 import { greet } from '@acme/core';
+
+dotenv.config({ override: true });
 
 const VERSION = '0.1.0';
 
