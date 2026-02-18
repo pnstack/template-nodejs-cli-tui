@@ -11,8 +11,6 @@
   "scripts": {
     "build": "turbo build",
     "dev": "turbo dev",
-    "link": "pnpm -C packages/cli link --global",
-    "unlink": "pnpm -C packages/cli unlink --global",
     "clean": "turbo clean",
     "lint": "turbo lint",
     "format": "turbo format",
