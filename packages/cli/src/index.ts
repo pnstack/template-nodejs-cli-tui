@@ -1,3 +1,4 @@
+import 'dotenv/config'; // load .env into process.env (overrides globals)
 import { Command } from 'commander';
 import { greet } from '@acme/core';
 
@@ -17,11 +18,18 @@ program
 
 program
   .command('ui')
-  .argument('[name]', 'Your name', 'World')
-  .description('Launch the Ink TUI')
-  .action(async (name: string) => {
+  .description('Launch the multi-tab terminal TUI')
+  .action(async () => {
     const { runTUI } = await import('@acme/tui');
-    await runTUI(name);
+    await runTUI();
+  });
+
+program
+  .command('chat')
+  .description('Launch the OpenAI chat TUI (requires OPENAI_API_KEY)')
+  .action(async () => {
+    const { runChatTUI } = await import('@acme/tui');
+    await runChatTUI();
   });
 
 program.parseAsync(process.argv);

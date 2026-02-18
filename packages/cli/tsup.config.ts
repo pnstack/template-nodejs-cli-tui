@@ -1,4 +1,8 @@
 import { defineConfig } from 'tsup';
+import { fileURLToPath } from 'node:url';
+import { dirname, resolve } from 'node:path';
+
+const __dirname = dirname(fileURLToPath(import.meta.url));
 
 export default defineConfig({
   entry: ['src/index.ts'],
@@ -7,7 +11,14 @@ export default defineConfig({
   clean: true,
   sourcemap: true,
   target: 'node18',
-  banner: { js: '#!/usr/bin/env node' },
+  platform: 'node',
+  banner: {
+    js: [
+      '#!/usr/bin/env node',
+      'import { createRequire } from "node:module";',
+      'const require = createRequire(import.meta.url);',
+    ].join('\n'),
+  },
   noExternal: ['@acme/core', '@acme/tui'],
-  external: ['react-devtools-core'],
+  external: ['react-devtools-core', '@lydell/node-pty'],
 });
