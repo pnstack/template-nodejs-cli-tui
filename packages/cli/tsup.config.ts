@@ -7,5 +7,7 @@ export default defineConfig({
   clean: true,
   sourcemap: true,
   target: 'node18',
-  banner: { js: '#!/usr/bin/env node' }
+  banner: { js: '#!/usr/bin/env node' },
+  noExternal: ['@acme/core', '@acme/tui'],
+  external: ['react-devtools-core'],
 });

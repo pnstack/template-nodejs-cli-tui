@@ -1,24 +1,28 @@
 {
   "name": "cli-tui-monorepo",
   "private": true,
-  "packageManager": "pnpm@10",
+  "packageManager": "pnpm@10.5.0",
+  "bin": {
+    "acme": "packages/cli/dist/index.js"
+  },
   "engines": {
-    "node": ">=22.0"
+    "node": ">=20.0"
   },
   "scripts": {
-    "build": "pnpm -r build",
-    "dev": "pnpm -r dev",
-    "link": "pnpm --filter @acme/cli link --global",
-    "unlink": "pnpm --filter @acme/cli unlink --global",
-    "clean": "pnpm -r clean",
-    "lint": "pnpm -r lint",
-    "format": "pnpm -r format",
-    "test": "pnpm -r test"
+    "build": "turbo build",
+    "dev": "turbo dev",
+    "link": "pnpm -C packages/cli link --global",
+    "unlink": "pnpm -C packages/cli unlink --global",
+    "clean": "turbo clean",
+    "lint": "turbo lint",
+    "format": "turbo format",
+    "test": "turbo test"
   },
   "devDependencies": {
     "@types/node": "^22.0.0",
     "eslint": "^9.15.0",
     "prettier": "^3.3.0",
+    "turbo": "latest",
     "tsup": "^8.3.0",
     "typescript": "^5.6.0",
     "vitest": "^2.1.0"
