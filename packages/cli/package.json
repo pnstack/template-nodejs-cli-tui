@@ -1,0 +1,30 @@
+{
+  "name": "@acme/cli",
+  "version": "0.1.0",
+  "type": "module",
+  "bin": {
+    "acme": "dist/index.js"
+  },
+  "main": "dist/index.js",
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "tsup",
+    "dev": "tsup --watch",
+    "clean": "rimraf dist || rm -rf dist",
+    "lint": "echo \"(cli) no lint rules configured\"",
+    "format": "prettier -w \"src/**/*.{ts,tsx}\"",
+    "test": "vitest run"
+  },
+  "dependencies": {
+    "@acme/core": "workspace:*",
+    "@acme/tui": "workspace:*",
+    "commander": "^12.0.0"
+  },
+  "devDependencies": {
+    "tsup": "^8.0.0",
+    "typescript": "^5.4.0",
+    "vitest": "^1.2.0"
+  }
+}

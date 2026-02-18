@@ -1,0 +1,23 @@
+{
+  "name": "@acme/core",
+  "version": "0.1.0",
+  "type": "module",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "tsup",
+    "dev": "tsup --watch",
+    "clean": "rimraf dist || rm -rf dist",
+    "lint": "echo \"(core) no lint rules configured\"",
+    "format": "prettier -w \"src/**/*.{ts,tsx}\"",
+    "test": "vitest run"
+  },
+  "devDependencies": {
+    "tsup": "^8.0.0",
+    "typescript": "^5.4.0",
+    "vitest": "^1.2.0"
+  }
+}
